@@ -20,7 +20,7 @@ function Ucapan() {
     pesan: "",
   });
 
-  const API_URL = "sb_publishable_wO-BR3PPhrLNU7ZkIYpMdw_27AKVhro";
+  const API_URL = "https://tknmxqrrxrvdqtpomjni.supabase.co";
 
   /* =========================
      AMBIL DATA UCAPAN
