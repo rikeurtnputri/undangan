@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { supabase } from "../supabaseClient"; // Ini import Supabase-nya
 import "../styles/Ucapan.css";
 
 import fotoBackground from "../assets/images/4.jpg";
@@ -20,32 +21,30 @@ function Ucapan() {
     pesan: "",
   });
 
-  const API_URL = "https://tknmxqrrxrvdqtpomjni.supabase.co";
+  // Nama tabel di Supabase (ganti jika nama tabelmu berbeda)
+  const NAMA_TABEL = "ucapan";
 
   /* =========================
-     AMBIL DATA UCAPAN
+     AMBIL DATA UCAPAN DARI SUPABASE
   ========================= */
 
   const ambilUcapan = async () => {
     try {
-      const response = await fetch(
-        `${API_URL}/get_ucapan.php`
-      );
+      // Mengambil data dari Supabase
+      const { data, error } = await supabase
+        .from(NAMA_TABEL)
+        .select('*')
+        .order('created_at', { ascending: false }); // Mengurutkan dari yang terbaru
 
-      if (!response.ok) {
-        throw new Error("Server tidak merespons");
+      if (error) {
+        throw error;
       }
 
-      const result = await response.json();
-
-      if (result.success) {
-        setUcapanList(result.data);
+      if (data) {
+        setUcapanList(data);
       }
     } catch (error) {
-      console.error(
-        "Gagal mengambil data ucapan:",
-        error
-      );
+      console.error("Gagal mengambil data ucapan:", error.message);
     }
   };
 
@@ -62,8 +61,7 @@ function Ucapan() {
   ========================= */
 
   useEffect(() => {
-    const elements =
-      document.querySelectorAll(".ucapan-animate");
+    const elements = document.querySelectorAll(".ucapan-animate");
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -107,11 +105,7 @@ function Ucapan() {
      NOTIFIKASI
   ========================= */
 
-  const tampilkanNotifikasi = (
-    tipe,
-    judul,
-    pesan
-  ) => {
+  const tampilkanNotifikasi = (tipe, judul, pesan) => {
     setNotifikasi({
       tampil: true,
       tipe,
@@ -128,7 +122,7 @@ function Ucapan() {
   };
 
   /* =========================
-     KIRIM UCAPAN
+     KIRIM UCAPAN KE SUPABASE
   ========================= */
 
   const kirimUcapan = async (e) => {
@@ -155,59 +149,39 @@ function Ucapan() {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        `${API_URL}/tambah_ucapan.php`,
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-
-          body: new URLSearchParams({
+      // Mengirim data ke Supabase
+      const { error } = await supabase
+        .from(NAMA_TABEL)
+        .insert([
+          {
             nama: nama.trim(),
             ucapan: ucapan.trim(),
             kehadiran: kehadiran,
-          }),
-        }
-      );
+          }
+        ]);
 
-      if (!response.ok) {
-        throw new Error("Server tidak merespons");
+      if (error) {
+        throw error;
       }
 
-      const result = await response.json();
+      // Jika berhasil:
+      setNama("");
+      setUcapan("");
+      setKehadiran("Hadir");
 
-      if (result.success) {
-        setNama("");
-        setUcapan("");
-        setKehadiran("Hadir");
-
-        await ambilUcapan();
-
-        tampilkanNotifikasi(
-          "success",
-          "Ucapan Berhasil Dikirim",
-          "Terima kasih atas doa dan ucapan baik yang telah diberikan untuk kami. ❤️"
-        );
-      } else {
-        tampilkanNotifikasi(
-          "error",
-          "Ucapan Gagal Dikirim",
-          result.message ||
-            "Terjadi kesalahan saat mengirim ucapan."
-        );
-      }
-    } catch (error) {
-      console.error(
-        "Gagal mengirim ucapan:",
-        error
-      );
+      await ambilUcapan(); // Refresh data ucapan
 
       tampilkanNotifikasi(
+        "success",
+        "Ucapan Berhasil Dikirim",
+        "Terima kasih atas doa dan ucapan baik yang telah diberikan untuk kami. ❤️"
+      );
+    } catch (error) {
+      console.error("Gagal mengirim ucapan:", error.message);
+      tampilkanNotifikasi(
         "error",
-        "Koneksi Bermasalah",
-        "Tidak dapat terhubung ke server. Pastikan Laragon sedang berjalan."
+        "Ucapan Gagal Dikirim",
+        "Terjadi kesalahan saat mengirim ucapan atau koneksi bermasalah."
       );
     } finally {
       setLoading(false);
@@ -217,7 +191,7 @@ function Ucapan() {
   return (
     <>
       {/* =========================
-          SECTION UCAPAN
+         SECTION UCAPAN
       ========================= */}
 
       <section
