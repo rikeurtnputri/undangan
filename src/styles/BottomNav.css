@@ -1,0 +1,305 @@
+/* =========================
+   FONT
+========================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 17px;
+
+  width: min(94%, 560px);
+
+  transform: translateX(-50%);
+
+  z-index: 9999;
+
+  font-family: "Poppins", sans-serif;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   NAV INNER
+========================= */
+
+.bottom-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 8px 7px;
+
+  background: rgba(251, 246, 236, 0.95);
+
+  border: 1px solid rgba(116, 31, 53, 0.14);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 10px 35px rgba(116, 31, 53, 0.14),
+    0 3px 10px rgba(0, 0, 0, 0.05);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  pointer-events: auto;
+}
+
+
+/* =========================
+   ITEM
+========================= */
+
+.bottom-nav-item {
+  position: relative;
+
+  display: flex;
+  flex: 1;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  height: 47px;
+
+  padding: 3px 2px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: rgba(116, 31, 53, 0.48);
+
+  font-family: "Poppins", sans-serif;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    color 0.3s ease,
+    transform 0.25s ease;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.bottom-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 29px;
+  height: 26px;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.3s ease;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.bottom-nav-label {
+  font-size: 7.5px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    font-weight 0.3s ease;
+}
+
+
+/* =========================
+   ACTIVE
+========================= */
+
+.bottom-nav-item.active {
+  color: #741f35;
+}
+
+.bottom-nav-item.active .bottom-nav-icon {
+  transform: translateY(-2px) scale(1.08);
+}
+
+.bottom-nav-item.active .bottom-nav-label {
+  font-weight: 600;
+}
+
+
+/* =========================
+   ACTIVE DOT
+========================= */
+
+.bottom-nav-item.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #741f35;
+
+  transform: translateX(-50%);
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+@media (hover: hover) {
+  .bottom-nav-item:hover {
+    color: #741f35;
+  }
+
+  .bottom-nav-item:hover .bottom-nav-icon {
+    transform: translateY(-2px);
+  }
+}
+
+
+/* =========================
+   CLICK
+========================= */
+
+.bottom-nav-item:active {
+  transform: scale(0.9);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .bottom-nav {
+    width: calc(100% - 22px);
+    bottom: 11px;
+  }
+
+  .bottom-nav-inner {
+    padding: 7px 4px;
+
+    border-radius: 27px;
+
+    box-shadow:
+      0 9px 28px rgba(116, 31, 53, 0.15),
+      0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .bottom-nav-item {
+    height: 44px;
+  }
+
+  .bottom-nav-icon {
+    width: 27px;
+    height: 24px;
+  }
+
+  .bottom-nav-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .bottom-nav-label {
+    font-size: 6.8px;
+  }
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 360px) {
+
+  .bottom-nav {
+    width: calc(100% - 16px);
+    bottom: 9px;
+  }
+
+  .bottom-nav-inner {
+    padding: 6px 3px;
+  }
+
+  .bottom-nav-item {
+    height: 42px;
+  }
+
+  .bottom-nav-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .bottom-nav-label {
+    font-size: 6.2px;
+  }
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 768px) {
+
+  .bottom-nav {
+    width: 560px;
+    bottom: 20px;
+  }
+
+  .bottom-nav-inner {
+    padding: 9px 8px;
+  }
+
+  .bottom-nav-item {
+    height: 49px;
+  }
+
+  .bottom-nav-label {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .bottom-nav-item,
+  .bottom-nav-icon,
+  .bottom-nav-label {
+    transition: none;
+  }
+}

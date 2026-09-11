@@ -1,0 +1,895 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap");
+
+
+/* =========================
+   RESET
+========================= */
+
+.love-story-section,
+.love-story-section * {
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.love-story-section {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 75px 20px;
+
+  background: #fbf7ef;
+
+  font-family: "Poppins", sans-serif;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   WRAPPER
+========================= */
+
+.love-story-wrapper {
+  width: 100%;
+  max-width: 390px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.love-story-heading {
+  width: 100%;
+
+  text-align: center;
+
+  opacity: 0;
+
+  transform: translateY(45px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================
+   OUR LOVE STORY
+   ALLURA
+========================= */
+
+.love-story-heading p {
+  margin: 0 0 10px;
+
+  font-family: "Allura", cursive !important;
+
+  font-size: 30px;
+
+  font-weight: 400 !important;
+
+  font-style: normal !important;
+
+  letter-spacing: 0;
+
+  line-height: 1;
+
+  color: #741f35;
+
+  text-transform: none;
+}
+
+
+/* =========================
+   OUR JOURNEY
+   POPPINS
+========================= */
+
+.love-story-heading h2 {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 24px;
+
+  font-weight: 600 !important;
+
+  font-style: normal !important;
+
+  line-height: 1.15;
+
+  color: #741f35;
+
+  text-transform: none;
+}
+
+
+/* =========================
+   SUBTITLE
+   POPPINS
+========================= */
+
+.love-story-heading span {
+  display: block;
+
+  margin-top: 12px;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 1.5;
+
+  color: rgba(116, 31, 53, 0.65);
+
+  text-transform: none;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.love-timeline {
+  position: relative;
+
+  width: 100%;
+
+  margin-top: 50px;
+
+  padding-left: 42px;
+
+  padding-bottom: 10px;
+}
+
+
+/* =========================
+   GARIS VERTIKAL
+========================= */
+
+.love-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  top: 5px;
+  bottom: 5px;
+
+  left: 11px;
+
+  width: 1px;
+
+  background: rgba(116, 31, 53, 0.35);
+
+  transform-origin: top;
+
+  transform: scaleY(0);
+
+  transition:
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================
+   ITEM
+========================= */
+
+.love-item {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  padding-bottom: 55px;
+}
+
+
+/* =========================
+   HATI
+========================= */
+
+.love-dot {
+  position: absolute;
+
+  top: 15px;
+
+  left: -39px;
+
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  z-index: 3;
+
+  opacity: 0;
+
+  transform:
+    translateY(10px)
+    scale(0.4)
+    rotate(-15deg);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================
+   BENTUK HATI
+========================= */
+
+.love-dot::before {
+  content: "♥";
+
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  color: #741f35;
+
+  filter:
+    drop-shadow(
+      0 3px 5px
+      rgba(116, 31, 53, 0.18)
+    );
+}
+
+
+/* =========================
+   GARIS HORIZONTAL
+========================= */
+
+.love-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 25px;
+
+  left: -30px;
+
+  width: 30px;
+  height: 1px;
+
+  background: rgba(116, 31, 53, 0.35);
+
+  transform-origin: left;
+
+  transform: scaleX(0);
+
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.love-card {
+  position: relative;
+
+  width: 100%;
+
+  padding: 26px 23px 28px;
+
+  background: rgba(255, 255, 255, 0.48);
+
+  border:
+    1px solid
+    rgba(116, 31, 53, 0.22);
+
+  border-radius: 16px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px
+    rgba(116, 31, 53, 0.07);
+
+  opacity: 0;
+
+  transform:
+    translateX(55px)
+    scale(0.97);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================
+   JUDUL CARD
+   ALLURA
+========================= */
+
+.love-card h3,
+.love-card h3 *,
+.love-card .title,
+.love-card .title * {
+  font-family: "Allura", cursive !important;
+
+  font-size: 27px;
+
+  font-weight: 400 !important;
+
+  font-style: normal !important;
+
+  line-height: 1.1;
+
+  color: #741f35;
+
+  text-transform: none;
+}
+
+
+.love-card h3 {
+  margin: 0;
+
+  opacity: 0;
+
+  transform: translateY(12px);
+
+  transition:
+    opacity 0.6s ease 0.15s,
+    transform 0.6s ease 0.15s;
+}
+
+
+/* =========================
+   GARIS KECIL
+========================= */
+
+.love-line {
+  width: 0;
+
+  height: 1px;
+
+  margin:
+    12px auto 14px;
+
+  background:
+    rgba(116, 31, 53, 0.45);
+
+  transition:
+    width 0.7s ease 0.45s;
+}
+
+
+/* =========================
+   ISI CERITA
+   POPPINS
+========================= */
+
+.love-card p {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 1.7;
+
+  color: #5f2637;
+
+  opacity: 0;
+
+  transform: translateY(12px);
+
+  transition:
+    opacity 0.7s ease 0.35s,
+    transform 0.7s ease 0.35s;
+}
+
+
+/* =========================
+   DELAY ITEM 1
+========================= */
+
+.love-item:nth-child(1) .love-dot {
+  transition-delay: 0.45s;
+}
+
+.love-item:nth-child(1)::before {
+  transition-delay: 0.6s;
+}
+
+.love-item:nth-child(1) .love-card {
+  transition-delay: 0.75s;
+}
+
+
+/* =========================
+   DELAY ITEM 2
+========================= */
+
+.love-item:nth-child(2) .love-dot {
+  transition-delay: 0.9s;
+}
+
+.love-item:nth-child(2)::before {
+  transition-delay: 1.05s;
+}
+
+.love-item:nth-child(2) .love-card {
+  transition-delay: 1.2s;
+}
+
+
+/* =========================
+   DELAY ITEM 3
+========================= */
+
+.love-item:nth-child(3) .love-dot {
+  transition-delay: 1.35s;
+}
+
+.love-item:nth-child(3)::before {
+  transition-delay: 1.5s;
+}
+
+.love-item:nth-child(3) .love-card {
+  transition-delay: 1.65s;
+}
+
+
+/* =========================
+   ANIMASI TIMELINE
+========================= */
+
+.love-story-show .love-story-heading {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+.love-story-show .love-timeline::before {
+  transform: scaleY(1);
+}
+
+
+.love-story-show .love-dot {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1)
+    rotate(0deg);
+}
+
+
+.love-story-show .love-item::before {
+  transform: scaleX(1);
+}
+
+
+.love-story-show .love-card {
+  opacity: 1;
+
+  transform:
+    translateX(0)
+    scale(1);
+}
+
+
+.love-story-show .love-card h3 {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+.love-story-show .love-line {
+  width: 35px;
+}
+
+
+.love-story-show .love-card p {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================
+   EFEK HATI
+========================= */
+
+.love-story-show .love-item:nth-child(1) .love-dot {
+  animation:
+    heartPop 0.7s
+    0.45s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+.love-story-show .love-item:nth-child(2) .love-dot {
+  animation:
+    heartPop 0.7s
+    0.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+.love-story-show .love-item:nth-child(3) .love-dot {
+  animation:
+    heartPop 0.7s
+    1.35s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+@keyframes heartPop {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(10px)
+      scale(0.2)
+      rotate(-25deg);
+  }
+
+  60% {
+    opacity: 1;
+
+    transform:
+      translateY(-3px)
+      scale(1.2)
+      rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(0deg);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .love-story-section {
+    padding: 60px 16px;
+  }
+
+
+  .love-story-wrapper {
+    max-width: 360px;
+  }
+
+
+  /* OUR LOVE STORY
+     ALLURA
+  */
+
+  .love-story-heading p {
+    font-family: "Allura", cursive !important;
+
+    font-size: 27px;
+
+    font-weight: 400 !important;
+
+    font-style: normal !important;
+
+    letter-spacing: 0;
+  }
+
+
+  /* OUR JOURNEY
+     POPPINS
+  */
+
+  .love-story-heading h2 {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 22px;
+
+    font-weight: 600 !important;
+
+    font-style: normal !important;
+  }
+
+
+  /* SUBTITLE
+     POPPINS
+  */
+
+  .love-story-heading span {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    font-style: normal;
+  }
+
+
+  /* TIMELINE */
+
+  .love-timeline {
+    margin-top: 43px;
+
+    padding-left: 38px;
+  }
+
+
+  .love-timeline::before {
+    left: 10px;
+  }
+
+
+  /* ITEM */
+
+  .love-item {
+    padding-bottom: 45px;
+  }
+
+
+  /* HATI */
+
+  .love-dot {
+    top: 14px;
+
+    left: -36px;
+
+    width: 19px;
+    height: 19px;
+  }
+
+
+  .love-dot::before {
+    font-size: 17px;
+  }
+
+
+  /* GARIS */
+
+  .love-item::before {
+    top: 24px;
+
+    left: -27px;
+
+    width: 27px;
+  }
+
+
+  /* CARD */
+
+  .love-card {
+    padding:
+      23px 19px 25px;
+
+    border-radius: 14px;
+  }
+
+
+  /* JUDUL CARD
+     ALLURA
+  */
+
+  .love-card h3,
+  .love-card h3 *,
+  .love-card .title,
+  .love-card .title * {
+    font-family: "Allura", cursive !important;
+
+    font-size: 25px;
+
+    font-weight: 400 !important;
+
+    font-style: normal !important;
+  }
+
+
+  /* ISI
+     POPPINS
+  */
+
+  .love-card p {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 12.5px;
+
+    font-weight: 400;
+
+    font-style: normal;
+
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 360px) {
+
+  .love-story-section {
+    padding: 50px 12px;
+  }
+
+
+  /* OUR LOVE STORY
+     ALLURA
+  */
+
+  .love-story-heading p {
+    font-family: "Allura", cursive !important;
+
+    font-size: 25px;
+  }
+
+
+  /* OUR JOURNEY
+     POPPINS
+  */
+
+  .love-story-heading h2 {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 21px;
+  }
+
+
+  .love-story-heading span {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 12px;
+  }
+
+
+  .love-timeline {
+    margin-top: 38px;
+
+    padding-left: 34px;
+  }
+
+
+  .love-timeline::before {
+    left: 9px;
+  }
+
+
+  .love-dot {
+    left: -32px;
+
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .love-dot::before {
+    font-size: 16px;
+  }
+
+
+  .love-item::before {
+    left: -24px;
+
+    width: 24px;
+  }
+
+
+  .love-card {
+    padding:
+      21px 17px 23px;
+  }
+
+
+  /* JUDUL
+     ALLURA
+  */
+
+  .love-card h3,
+  .love-card h3 *,
+  .love-card .title,
+  .love-card .title * {
+    font-family: "Allura", cursive !important;
+
+    font-size: 23px;
+
+    font-weight: 400 !important;
+
+    font-style: normal !important;
+  }
+
+
+  /* ISI
+     POPPINS
+  */
+
+  .love-card p {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 12px;
+  }
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 768px) {
+
+  .love-story-section {
+    width: 620px;
+
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .love-story-heading,
+  .love-timeline::before,
+  .love-dot,
+  .love-item::before,
+  .love-card,
+  .love-card h3,
+  .love-card p {
+
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+
+    animation: none;
+  }
+
+
+  .love-line {
+    width: 35px;
+
+    transition: none;
+  }
+}

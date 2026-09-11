@@ -1,0 +1,180 @@
+ /* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+  position: fixed;
+
+  right: 22px;
+  bottom: 125px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+
+  background: rgba(255, 250, 246, 0.88);
+
+  color: #7b2638;
+
+  cursor: pointer;
+
+  z-index: 10000;
+
+  box-shadow:
+    0 5px 20px rgba(50, 30, 25, 0.18);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.music-button svg {
+  width: 22px;
+  height: 22px;
+
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* =========================
+   SAAT MUSIK BERMAIN
+========================= */
+
+.music-button.playing {
+  animation: musicPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.music-button:hover {
+  transform: scale(1.08);
+
+  background: rgba(255, 255, 255, 0.98);
+
+  box-shadow:
+    0 7px 24px rgba(50, 30, 25, 0.25);
+}
+
+
+/* =========================
+   KLIK
+========================= */
+
+.music-button:active {
+  transform: scale(0.92);
+}
+
+
+/* =========================
+   ANIMASI MUSIK
+========================= */
+
+@keyframes musicPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 5px 20px rgba(50, 30, 25, 0.18);
+  }
+
+  50% {
+    box-shadow:
+      0 5px 25px rgba(123, 38, 56, 0.30);
+  }
+
+}
+
+
+/* =========================
+   HP
+========================= */
+
+@media (max-width: 480px) {
+
+  .music-button {
+    right: 16px;
+    bottom: 115px;
+
+    width: 44px;
+    height: 44px;
+  }
+
+  .music-button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 360px) {
+
+  .music-button {
+    right: 13px;
+    bottom: 108px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .music-button svg {
+    width: 19px;
+    height: 19px;
+  }
+
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 768px) {
+
+  .music-button {
+    right: calc(50% - 280px);
+    bottom: 125px;
+  }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .music-button.playing {
+    animation: none;
+  }
+
+}

@@ -1,0 +1,1034 @@
+/* =========================
+   FONT
+========================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@400;500;600&display=swap");
+
+
+/* =========================
+   RESET
+========================= */
+
+.acara-section,
+.acara-section * {
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.acara-section {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 75px 20px;
+
+  background: #fbf7ef;
+
+  font-family: "Poppins", sans-serif;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   WRAPPER
+========================= */
+
+.acara-wrapper {
+  width: 100%;
+  max-width: 390px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =========================
+   JUDUL ACARA
+========================= */
+
+.acara-heading {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  margin-bottom: 25px;
+
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+
+.acara-show .acara-heading {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================
+   BUNGA
+========================= */
+
+.acara-flower {
+  width: 78px;
+  height: 78px;
+
+  object-fit: contain;
+
+  display: block;
+
+  margin-bottom: 3px;
+
+  filter:
+    drop-shadow(
+      0 3px 4px
+      rgba(80, 25, 40, 0.28)
+    );
+}
+
+
+/* =========================
+   JUDUL
+   Acara Pernikahan
+========================= */
+
+.acara-heading h2 {
+  margin: 30px;
+
+  font-family: "Allura", cursive;
+
+  font-size: 36px;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 1;
+
+  color: #741f35;
+
+  letter-spacing: 0.3px;
+
+  text-transform: none;
+}
+
+
+/* =========================
+   CARD JENDELA
+========================= */
+
+.acara-window {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    70px 27px 32px;
+
+  background:
+    rgba(116, 31, 53, 0.88);
+
+  border-radius:
+    190px 190px 32px 32px;
+
+  box-shadow:
+    0 18px 50px
+    rgba(116, 31, 53, 0.22);
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform:
+    translateY(35px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+  transition-delay: 0.1s;
+}
+
+
+.acara-show .acara-window {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================
+   BORDER DALAM
+========================= */
+
+.acara-window::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 9px;
+
+  border:
+    1px solid
+    rgba(
+      251,
+      247,
+      239,
+      0.3
+    );
+
+  border-radius:
+    181px 181px 24px 24px;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   ISI CARD
+========================= */
+
+.acara-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  text-align: center;
+
+  color: #fbf7ef;
+}
+
+
+/* =====================================================
+   ANIMASI ISI CARD
+===================================================== */
+
+.event-block,
+.event-divider,
+.location-block,
+.map-container,
+.maps-button {
+  opacity: 0;
+
+  transform:
+    translateY(40px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+/* =========================
+   AKAD
+========================= */
+
+.acara-show .event-block:nth-child(1) {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  transition-delay: 0.35s;
+}
+
+
+/* =========================
+   GARIS 1
+========================= */
+
+.acara-show .event-divider:nth-child(2) {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scaleX(1);
+
+  transition-delay: 0.55s;
+}
+
+
+/* =========================
+   RESEPSI
+========================= */
+
+.acara-show .event-block:nth-child(3) {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  transition-delay: 0.75s;
+}
+
+
+/* =========================
+   GARIS 2
+========================= */
+
+.acara-show .event-divider:nth-child(4) {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scaleX(1);
+
+  transition-delay: 0.95s;
+}
+
+
+/* =========================
+   LOKASI
+========================= */
+
+.acara-show .location-block {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  transition-delay: 1.15s;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.acara-show .map-container {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  transition-delay: 1.4s;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.acara-show .maps-button {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  transition-delay: 1.6s;
+}
+
+
+/* =========================
+   EVENT
+========================= */
+
+.event-block {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.event-icon {
+  width: 44px;
+  height: 44px;
+
+  margin-bottom: 8px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    scale(0.7);
+
+  transition:
+    transform 0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.acara-show .event-icon {
+  transform:
+    scale(1);
+}
+
+
+.event-icon svg {
+  width: 30px;
+  height: 30px;
+
+  fill: none;
+
+  stroke: #fbf7ef;
+
+  stroke-width: 1.4;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================
+   JUDUL EVENT
+   Akad Nikah
+   Resepsi Pernikahan
+
+   ALLURA
+   BUKAN HURUF BESAR SEMUA
+========================= */
+
+.event-title {
+  margin: 0 0 5px;
+
+  font-family:
+    "Allura",
+    cursive !important;
+
+  font-size: 28px;
+
+  font-weight: 400 !important;
+
+  font-style: normal !important;
+
+  line-height: 1.15;
+
+  letter-spacing: 0;
+
+  color: #fbf7ef;
+
+  /*
+    PENTING:
+    Jangan ubah menjadi uppercase.
+    Tulisan mengikuti JSX:
+    "Akad Nikah"
+    "Resepsi Pernikahan"
+  */
+  text-transform: none !important;
+}
+
+
+/* =========================
+   JAM
+========================= */
+
+.event-time {
+  margin: 0;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  line-height: 1.15;
+
+  color: #fbf7ef;
+
+  text-transform: none;
+}
+
+
+/* =========================
+   TANGGAL
+========================= */
+
+.event-date {
+  margin: 4px 0 0;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  color:
+    rgba(
+      251,
+      247,
+      239,
+      0.9
+    );
+
+  text-transform: none;
+}
+
+
+/* =========================
+   GARIS
+========================= */
+
+.event-divider {
+  width: 55%;
+
+  height: 1px;
+
+  margin:
+    27px auto;
+
+  background:
+    rgba(
+      251,
+      247,
+      239,
+      0.3
+    );
+
+  transform:
+    translateY(40px)
+    scaleX(0.6);
+}
+
+
+/* =========================
+   LOKASI
+========================= */
+
+.location-block {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================
+   ICON LOKASI
+========================= */
+
+.location-icon {
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 5px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    scale(0.7);
+
+  transition:
+    transform 0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.acara-show .location-icon {
+  transform:
+    scale(1);
+}
+
+
+.location-icon svg {
+  width: 28px;
+  height: 28px;
+
+  fill: none;
+
+  stroke: #fbf7ef;
+
+  stroke-width: 1.4;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.location-label {
+  margin: 0 0 5px;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 2px;
+
+  color:
+    rgba(
+      251,
+      247,
+      239,
+      0.72
+    );
+
+  text-transform: none;
+}
+
+
+/* =========================
+   NAMA LOKASI
+   Kediaman Mempelai Wanita
+   = ALLURA
+========================= */
+
+.location-block h3 {
+  margin: 0;
+
+  font-family:
+    "Allura",
+    cursive !important;
+
+  font-size: 29px;
+
+  font-weight: 400 !important;
+
+  font-style: normal !important;
+
+  line-height: 1.2;
+
+  color: #fbf7ef;
+
+  text-transform: none !important;
+}
+
+
+/* =========================
+   ALAMAT
+========================= */
+
+.location-address {
+  max-width: 285px;
+
+  margin:
+    7px auto 0;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  color:
+    rgba(
+      251,
+      247,
+      239,
+      0.82
+    );
+
+  text-transform: none;
+}
+
+
+/* =========================
+   MAPS
+========================= */
+
+.map-container {
+  width: 100%;
+
+  margin-top: 28px;
+
+  overflow: hidden;
+
+  border:
+    2px solid
+    rgba(
+      251,
+      247,
+      239,
+      0.25
+    );
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.16);
+}
+
+
+.map-container iframe {
+  display: block;
+
+  width: 100%;
+
+  height: 210px;
+
+  border: 0;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.maps-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 17px;
+
+  padding:
+    10px 19px;
+
+  border:
+    1px solid
+    rgba(
+      251,
+      247,
+      239,
+      0.55
+    );
+
+  border-radius: 30px;
+
+  background:
+    rgba(
+      251,
+      247,
+      239,
+      0.08
+    );
+
+  color: #fbf7ef;
+
+  text-decoration: none;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  text-transform: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.maps-button:hover {
+  background: #fbf7ef;
+
+  color: #741f35;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .acara-section {
+    padding:
+      60px 16px;
+  }
+
+
+  .acara-wrapper {
+    max-width: 360px;
+  }
+
+
+  .acara-heading {
+    margin-bottom: 16px;
+  }
+
+
+  .acara-flower {
+    width: 70px;
+    height: 70px;
+
+    margin-bottom: 3px;
+  }
+
+
+  .acara-heading h2 {
+    font-size: 34px;
+  }
+
+
+  .acara-window {
+    padding:
+      60px 21px 28px;
+
+    border-radius:
+      170px 170px 30px 30px;
+  }
+
+
+  .acara-window::after {
+    inset: 8px;
+
+    border-radius:
+      162px 162px 23px 23px;
+  }
+
+
+  .event-title {
+    font-family:
+      "Allura",
+      cursive !important;
+
+    font-size: 26px;
+
+    font-weight: 400 !important;
+
+    font-style: normal !important;
+
+    text-transform: none !important;
+  }
+
+
+  .event-time {
+    font-size: 19px;
+  }
+
+
+  .event-date {
+    font-size: 12.5px;
+  }
+
+
+  .event-divider {
+    width: 60%;
+
+    margin:
+      24px auto;
+  }
+
+
+  .location-block h3 {
+    font-family:
+      "Allura",
+      cursive !important;
+
+    font-size: 27px;
+
+    font-weight: 400 !important;
+
+    text-transform: none !important;
+  }
+
+
+  .location-address {
+    max-width: 260px;
+
+    font-size: 13px;
+  }
+
+
+  .map-container {
+    margin-top: 26px;
+
+    border-radius: 18px;
+  }
+
+
+  .map-container iframe {
+    height: 195px;
+  }
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 360px) {
+
+  .acara-section {
+    padding:
+      50px 12px;
+  }
+
+
+  .acara-flower {
+    width: 62px;
+    height: 62px;
+  }
+
+
+  .acara-heading h2 {
+    font-size: 32px;
+  }
+
+
+  .acara-window {
+    padding:
+      54px 17px 25px;
+
+    border-radius:
+      155px 155px 27px 27px;
+  }
+
+
+  .acara-window::after {
+    border-radius:
+      147px 147px 21px 21px;
+  }
+
+
+  .event-title {
+    font-family:
+      "Allura",
+      cursive !important;
+
+    font-size: 24px;
+
+    font-weight: 400 !important;
+
+    text-transform: none !important;
+  }
+
+
+  .event-time {
+    font-size: 18px;
+  }
+
+
+  .event-date {
+    font-size: 12px;
+  }
+
+
+  .location-block h3 {
+    font-family:
+      "Allura",
+      cursive !important;
+
+    font-size: 25px;
+
+    font-weight: 400 !important;
+
+    text-transform: none !important;
+  }
+
+
+  .location-address {
+    font-size: 12.5px;
+  }
+
+
+  .map-container iframe {
+    height: 180px;
+  }
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 768px) {
+
+  .acara-section {
+    width: 620px;
+
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .acara-heading,
+  .acara-window,
+  .event-block,
+  .event-divider,
+  .location-block,
+  .map-container,
+  .maps-button,
+  .event-icon,
+  .location-icon {
+
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+}

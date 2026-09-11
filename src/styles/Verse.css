@@ -1,0 +1,381 @@
+/* =========================
+   FONT
+========================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap");
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   VERSE SECTION
+========================= */
+
+/* =========================
+   VERSE SECTION
+========================= */
+
+.verse {
+  position: relative;
+
+  width: 100%;
+
+  /* SETENGAH HALAMAN */
+  min-height: 55vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+
+/* =========================
+   BACKGROUND FOTO
+========================= */
+
+/* =========================
+   BACKGROUND FOTO
+========================= */
+
+.verse-bg {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  background-image:
+    url("../assets/images/bg.jpg");
+
+  background-size: cover;
+
+  /*
+    FOTO DIGESER KE BAWAH
+    Bagian atas dikurangi,
+    bagian bawah/bunga lebih terlihat sedikit
+  */
+  background-position: center 75%;
+
+  transform: scale(1.02);
+
+  /* FOTO TETAP TERANG */
+  filter: none;
+}
+
+
+/* =========================
+   MAROON TINT
+========================= */
+
+.verse-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  /*
+    MAROON TIPIS
+    Tidak membuat foto gelap
+  */
+  background:
+    rgba(116, 31, 53, 0.18);
+}
+
+
+/* =========================
+   ISI
+========================= */
+
+.verse-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(86%, 400px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 30px 24px;
+
+  color: #741f35;
+}
+
+
+/* =========================
+   TANDA KUTIP
+========================= */
+
+.verse-mark {
+  font-family: Georgia, serif;
+
+  font-size: 48px;
+
+  line-height: 1;
+
+  color: #741f35;
+}
+
+.verse-mark-open {
+  margin-bottom: 6px;
+}
+
+.verse-mark-close {
+  margin-top: 10px;
+
+  transform: scaleX(-1);
+}
+
+
+/* =========================
+   TEKS AYAT
+========================= */
+
+.verse-text {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  font-size: clamp(17px, 4.2vw, 21px);
+
+  line-height: 1.7;
+
+  letter-spacing: 0.2px;
+
+  color: #741f35;
+
+  /* Tidak terlalu berat */
+  text-shadow: none;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.verse-divider {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  margin: 20px 0 14px;
+}
+
+.verse-divider-line {
+  width: 40px;
+
+  height: 1px;
+
+  background: rgba(116, 31, 53, 0.45);
+}
+
+.verse-divider-glyph {
+  font-size: 14px;
+
+  color: #741f35;
+}
+
+
+/* =========================
+   REFERENSI AYAT
+========================= */
+
+.verse-reference {
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+
+  color: #741f35;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .verse {
+    min-height: 55vh;
+  }
+
+  .verse-content {
+    width: 90%;
+
+    padding: 28px 18px;
+  }
+
+  .verse-mark {
+    font-size: 40px;
+  }
+
+  .verse-text {
+    font-size: 16px;
+
+    line-height: 1.65;
+  }
+
+  .verse-divider {
+    margin: 18px 0 12px;
+  }
+
+  .verse-reference {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 360px) {
+
+  .verse {
+    min-height: 52vh;
+  }
+
+  .verse-text {
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  .verse-mark {
+    font-size: 34px;
+  }
+}
+
+
+/* =========================
+   DESKTOP - MODEL HP
+========================= */
+
+@media (min-width: 768px) {
+
+  .verse {
+    width: 620px;
+
+    margin: 0 auto;
+
+    min-height: 55vh;
+  }
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .verse-bg {
+    transform: none;
+  }
+}
+
+/* =========================
+   SCROLL REVEAL ANIMATION
+========================= */
+
+/* Kondisi awal semua elemen */
+.verse-content > * {
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+
+/* =========================
+   SAAT VERSE MASUK VIEWPORT
+========================= */
+
+.verse.show .verse-content > * {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================
+   MUNCUL BERURUTAN
+========================= */
+
+.verse.show .verse-mark-open {
+  transition-delay: 0.1s;
+}
+
+.verse.show .verse-text {
+  transition-delay: 0.3s;
+}
+
+.verse.show .verse-mark-close {
+  transition-delay: 0.5s;
+}
+
+.verse.show .verse-divider {
+  transition-delay: 0.7s;
+}
+
+.verse.show .verse-reference {
+  transition-delay: 0.9s;
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .verse-content > * {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+}

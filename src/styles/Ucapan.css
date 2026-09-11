@@ -1,0 +1,1222 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@400;500;600&display=swap");
+
+
+/* =========================
+   RESET
+========================= */
+
+.ucapan-section,
+.ucapan-section * {
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   MAIN SECTION
+========================= */
+
+.ucapan-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 70px 22px 80px;
+
+  background-color: #fbf6ec;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  color: #741f35;
+
+  text-align: center;
+
+  font-family: "Poppins", sans-serif;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   BACKGROUND OVERLAY
+========================= */
+
+/* Dibuat sedikit lebih gelap agar isi lebih jelas */
+.ucapan-bg-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  background:
+    rgba(35, 15, 22, 0.34);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.ucapan-container {
+  position: relative;
+
+  z-index: 1;
+
+  width: min(100%, 480px);
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   GENERAL SCROLL ANIMATION
+========================= */
+
+.ucapan-animate {
+  opacity: 0;
+
+  transform: translateY(55px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ucapan-animate.show {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.ucapan-header {
+  max-width: 500px;
+
+  margin: 0 auto 32px;
+}
+
+.ucapan-header h2 {
+  margin: 0 0 17px;
+
+  font-family: "Allura", cursive;
+
+  font-size: 42px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #fff;
+}
+
+.ucapan-header p {
+  max-width: 430px;
+
+  margin: 0 auto;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.92);
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.ucapan-summary {
+  display: flex;
+
+  justify-content: center;
+  align-items: stretch;
+
+  width: 100%;
+
+  margin: 0 auto 25px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.66);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.45);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 35px
+    rgba(45, 15, 25, 0.15);
+
+  backdrop-filter: blur(5px);
+
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.summary-item {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  min-height: 78px;
+
+  padding: 12px 8px;
+
+  text-align: center;
+}
+
+.summary-item + .summary-item {
+  border-left:
+    1px solid
+    rgba(116, 31, 53, 0.12);
+}
+
+.summary-number {
+  margin-bottom: 3px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  color: #741f35;
+}
+
+.summary-label {
+  font-family: "Poppins", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  color: #806c71;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.ucapan-form {
+  width: 100%;
+
+  padding: 25px 23px;
+
+  margin-bottom: 28px;
+
+  background:
+    rgba(255, 255, 255, 0.68);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.45);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 35px
+    rgba(45, 15, 25, 0.15);
+
+  backdrop-filter: blur(5px);
+
+  -webkit-backdrop-filter: blur(5px);
+
+  text-align: left;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group:last-of-type {
+  margin-bottom: 20px;
+}
+
+.form-group > label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  color: #741f35;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.form-group input,
+.form-group textarea {
+  display: block;
+
+  width: 100%;
+
+  padding: 11px 13px;
+
+  border:
+    1px solid
+    rgba(116, 31, 53, 0.15);
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background:
+    rgba(255, 253, 249, 0.82);
+
+  color: #4f4144;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.form-group input {
+  height: 42px;
+}
+
+.form-group textarea {
+  min-height: 105px;
+
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa0a2;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #741f35;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(116, 31, 53, 0.07);
+}
+
+
+/* =========================
+   KEHADIRAN
+========================= */
+
+.attendance-options {
+  display: flex;
+
+  gap: 9px;
+
+  width: 100%;
+}
+
+.attendance-option {
+  flex: 1;
+
+  cursor: pointer;
+
+  margin: 0;
+}
+
+.attendance-option input {
+  display: none;
+}
+
+.attendance-option span {
+  display: block;
+
+  width: 100%;
+
+  padding: 10px 8px;
+
+  text-align: center;
+
+  border:
+    1px solid
+    rgba(116, 31, 53, 0.15);
+
+  border-radius: 11px;
+
+  background:
+    rgba(255, 253, 249, 0.80);
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  color: #806c71;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.attendance-option:hover span {
+  transform: translateY(-2px);
+}
+
+.attendance-option.active span {
+  background: #741f35;
+
+  border-color: #741f35;
+
+  color: #fff;
+
+  box-shadow:
+    0 5px 14px
+    rgba(116, 31, 53, 0.15);
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.ucapan-submit {
+  display: block;
+
+  width: 100%;
+
+  height: 43px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #741f35;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.ucapan-submit:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(116, 31, 53, 0.25);
+}
+
+.ucapan-submit:active {
+  transform: translateY(0);
+}
+
+.ucapan-submit:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================
+   LIST
+========================= */
+
+.ucapan-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+
+  width: 100%;
+}
+
+
+/* =========================
+   UCAPAN CARD
+========================= */
+
+/*
+  Awalnya benar-benar tidak terlihat.
+  Saat muncul di viewport, class show diberikan
+  oleh IntersectionObserver.
+*/
+
+.ucapan-item {
+  width: 100%;
+
+  padding: 17px 18px;
+
+  background:
+    rgba(255, 255, 255, 0.68);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.45);
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 10px 28px
+    rgba(45, 15, 25, 0.13);
+
+  backdrop-filter: blur(5px);
+
+  -webkit-backdrop-filter: blur(5px);
+
+  text-align: left;
+
+  opacity: 0;
+
+  transform:
+    translateY(55px)
+    scale(0.97);
+
+  animation:
+    ucapanItemShow
+    0.75s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+@keyframes ucapanItemShow {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(55px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================
+   UCAPAN TOP
+========================= */
+
+.ucapan-item-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 7px;
+}
+
+.ucapan-item h3 {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #741f35;
+}
+
+.ucapan-item p {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  color: #6f5d61;
+}
+
+
+/* =========================
+   ATTENDANCE BADGE
+========================= */
+
+.attendance-badge {
+  flex-shrink: 0;
+
+  padding: 4px 9px;
+
+  border-radius: 20px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 500;
+}
+
+.attendance-badge.hadir {
+  background:
+    rgba(116, 31, 53, 0.10);
+
+  color: #741f35;
+}
+
+.attendance-badge.tidak-hadir {
+  background:
+    rgba(120, 110, 110, 0.10);
+
+  color: #776b6e;
+}
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.ucapan-empty {
+  width: 100%;
+
+  padding: 20px;
+
+  text-align: center;
+
+  border:
+    1px dashed
+    rgba(116, 31, 53, 0.20);
+
+  border-radius: 17px;
+
+  background:
+    rgba(255, 255, 255, 0.60);
+
+  backdrop-filter: blur(4px);
+
+  -webkit-backdrop-filter: blur(4px);
+
+  color: #806c71;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   CLOSING
+========================= */
+
+.ucapan-closing {
+  margin: 55px auto 10px;
+
+  text-align: center;
+}
+
+.ucapan-closing-text {
+  max-width: 360px;
+
+  margin: 0 auto 18px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.ucapan-initial {
+  font-family: "Allura", cursive;
+
+  font-size: 48px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #fff;
+
+  margin-bottom: 3px;
+}
+
+.ucapan-couple-name {
+  font-family: "Allura", cursive;
+
+  font-size: 30px;
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  color: #fff;
+
+  margin-bottom: 13px;
+}
+
+.ucapan-closing-flower {
+  display: block;
+
+  width: 105px;
+
+  height: auto;
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   NOTIFICATION
+========================= */
+
+.ucapan-notification-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(35, 15, 22, 0.35);
+
+  backdrop-filter: blur(5px);
+
+  -webkit-backdrop-filter: blur(5px);
+
+  animation:
+    notificationOverlayShow
+    0.25s ease;
+}
+
+.ucapan-notification {
+  position: relative;
+
+  width: min(100%, 360px);
+
+  padding: 32px 25px 27px;
+
+  background: #fbf6ec;
+
+  border:
+    1px solid
+    rgba(116, 31, 53, 0.12);
+
+  border-radius: 22px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 60px
+    rgba(72, 29, 40, 0.22);
+
+  animation:
+    notificationShow
+    0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.notification-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 17px;
+
+  border-radius: 50%;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 27px;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.notification-success
+.notification-icon {
+  background:
+    rgba(116, 31, 53, 0.10);
+
+  border:
+    1px solid
+    rgba(116, 31, 53, 0.18);
+
+  color: #741f35;
+}
+
+.notification-error
+.notification-icon {
+  background:
+    rgba(120, 80, 70, 0.10);
+
+  border:
+    1px solid
+    rgba(120, 80, 70, 0.18);
+
+  color: #806c71;
+}
+
+.ucapan-notification h3 {
+  margin: 0 0 9px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  color: #741f35;
+}
+
+.ucapan-notification p {
+  max-width: 290px;
+
+  margin: 0 auto 22px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  color: #6f5960;
+}
+
+.ucapan-notification button {
+  display: block;
+
+  width: 100%;
+
+  height: 42px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #741f35;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.ucapan-notification button:hover {
+  background: #651b30;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px
+    rgba(116, 31, 53, 0.22);
+}
+
+.ucapan-notification button:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================
+   NOTIFICATION ANIMATION
+========================= */
+
+@keyframes notificationOverlayShow {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+@keyframes notificationShow {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px)
+      scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 768px) {
+
+  .ucapan-section {
+    width: 620px;
+
+    margin: 0 auto;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .ucapan-section {
+    padding:
+      58px
+      18px
+      68px;
+  }
+
+
+  .ucapan-container {
+    width:
+      min(100%, 390px);
+  }
+
+
+  /* HEADER */
+
+  .ucapan-header {
+    margin-bottom: 28px;
+  }
+
+  .ucapan-header h2 {
+    margin-bottom: 15px;
+
+    font-size: 38px;
+  }
+
+  .ucapan-header p {
+    padding: 0 5px;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+  }
+
+
+  /* SUMMARY */
+
+  .ucapan-summary {
+    margin-bottom: 22px;
+
+    border-radius: 16px;
+  }
+
+  .summary-item {
+    min-height: 72px;
+
+    padding:
+      11px
+      5px;
+  }
+
+  .summary-number {
+    font-size: 18px;
+  }
+
+  .summary-label {
+    font-size: 8px;
+  }
+
+
+  /* FORM */
+
+  .ucapan-form {
+    padding:
+      22px
+      19px;
+
+    border-radius: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group > label {
+    font-size: 9px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 10px;
+  }
+
+  .form-group input {
+    height: 40px;
+  }
+
+  .form-group textarea {
+    min-height: 95px;
+  }
+
+
+  /* KEHADIRAN */
+
+  .attendance-options {
+    gap: 8px;
+  }
+
+  .attendance-option span {
+    padding:
+      9px
+      5px;
+
+    font-size: 9px;
+  }
+
+
+  /* BUTTON */
+
+  .ucapan-submit {
+    height: 41px;
+
+    font-size: 9px;
+  }
+
+
+  /* UCAPAN CARD */
+
+  .ucapan-item {
+    padding: 16px;
+
+    border-radius: 15px;
+  }
+
+  .ucapan-item h3 {
+    font-size: 11px;
+  }
+
+  .ucapan-item p {
+    font-size: 9px;
+
+    line-height: 1.7;
+  }
+
+  .attendance-badge {
+    padding:
+      4px
+      8px;
+
+    font-size: 7px;
+  }
+
+  .ucapan-empty {
+    padding:
+      19px
+      14px;
+
+    font-size: 9px;
+  }
+
+
+  /* CLOSING */
+
+  .ucapan-closing {
+    margin-top: 45px;
+  }
+
+  .ucapan-closing-text {
+    max-width: 300px;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    margin-bottom: 16px;
+  }
+
+  .ucapan-initial {
+    font-size: 43px;
+  }
+
+  .ucapan-couple-name {
+    font-size: 27px;
+
+    margin-bottom: 11px;
+  }
+
+  .ucapan-closing-flower {
+    width: 95px;
+  }
+
+
+  /* NOTIFICATION */
+
+  .ucapan-notification {
+    width:
+      min(100%, 330px);
+
+    padding:
+      28px
+      21px
+      23px;
+
+    border-radius: 20px;
+  }
+
+  .notification-icon {
+    width: 53px;
+
+    height: 53px;
+
+    margin-bottom: 15px;
+
+    font-size: 24px;
+  }
+
+  .ucapan-notification h3 {
+    font-size: 15px;
+  }
+
+  .ucapan-notification p {
+    max-width: 270px;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+
+    margin-bottom: 20px;
+  }
+
+  .ucapan-notification button {
+    height: 40px;
+
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ucapan-animate,
+  .ucapan-item,
+  .ucapan-submit,
+  .attendance-option span,
+  .ucapan-notification-overlay,
+  .ucapan-notification {
+    transition: none;
+
+    animation: none;
+  }
+
+}

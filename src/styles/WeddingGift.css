@@ -1,0 +1,764 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@400;500;600&display=swap");
+
+
+/* =========================
+   MAIN
+========================= */
+
+.wedding-gift {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 70px 22px 80px;
+
+  box-sizing: border-box;
+
+  background: #fbf6ec;
+
+  color: #741f35;
+
+  text-align: center;
+
+  font-family: "Poppins", sans-serif;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.gift-reveal {
+  opacity: 0;
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.gift-reveal.show {
+  opacity: 1;
+}
+
+
+/* Dari bawah */
+
+.gift-reveal-up {
+  transform: translateY(45px);
+}
+
+
+.gift-reveal-up.show {
+  transform: translateY(0);
+}
+
+
+/* Dari kiri */
+
+.gift-from-left {
+  transform: translateX(-110px);
+}
+
+
+.gift-from-left.show {
+  transform: translateX(0);
+}
+
+
+/* Dari kanan */
+
+.gift-from-right {
+  transform: translateX(110px);
+}
+
+
+.gift-from-right.show {
+  transform: translateX(0);
+}
+
+
+/* =========================
+   FLOWER
+========================= */
+
+.gift-flower {
+  display: block;
+
+  width: 115px;
+  height: auto;
+
+  margin: 0 auto 15px;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.gift-header {
+  max-width: 500px;
+
+  margin: 0 auto 38px;
+}
+
+
+/* =========================
+   WEDDING GIFT
+   ALLURA
+========================= */
+
+.gift-header h2 {
+  margin: 0 0 17px;
+
+  font-family: "Allura", cursive !important;
+
+  font-size: 58px;
+
+  font-weight: 400 !important;
+
+  font-style: normal !important;
+
+  line-height: 1;
+
+  color: #741f35;
+
+  text-transform: none;
+}
+
+
+/* =========================
+   HEADER TEXT
+   POPPINS
+========================= */
+
+.gift-header p {
+  max-width: 430px;
+
+  margin: 0 auto;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 1.65;
+
+  color: #6f5960;
+}
+
+
+/* =========================
+   GIFT CARD
+========================= */
+
+.gift-card {
+  width: min(100%, 390px);
+
+  margin: 0 auto 25px;
+
+  padding: 28px 24px 25px;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  border:
+    1px solid
+    rgba(116, 31, 53, 0.13);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(116, 31, 53, 0.08);
+}
+
+
+/* =========================
+   BANK LOGO
+========================= */
+
+.bank-logo-wrapper {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 62px;
+
+  margin-bottom: 13px;
+}
+
+
+.bank-logo {
+  display: block;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* BRI */
+
+.bank-logo-bri {
+  width: 125px;
+
+  max-height: 90px;
+}
+
+
+/* BCA */
+
+.bank-logo-bca {
+  width: 92px;
+
+  max-height: 50px;
+}
+
+
+/* =========================
+   OWNER
+   POPPINS
+========================= */
+
+.rekening-owner {
+  margin: 0 0 8px;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 1.5;
+
+  color: #6f5960;
+}
+
+
+.rekening-owner strong {
+  color: #741f35;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   NOMOR REKENING
+   POPPINS
+========================= */
+
+.rekening-number {
+  margin: 8px 0 18px;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 19px;
+
+  font-weight: 600;
+
+  font-style: normal;
+
+  letter-spacing: 2px;
+
+  color: #741f35;
+}
+
+
+/* =========================
+   BUTTON
+   POPPINS
+========================= */
+
+.copy-button {
+  display: block;
+
+  width: 100%;
+
+  padding: 11px 18px;
+
+  border: 1px solid #741f35;
+
+  border-radius: 25px;
+
+  background: transparent;
+
+  color: #741f35;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  font-style: normal;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+
+
+.copy-button:hover {
+  background: #741f35;
+
+  color: #fff;
+}
+
+
+.copy-button:active {
+  transform: scale(0.97);
+}
+
+
+.copy-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   ADDRESS
+========================= */
+
+.gift-address-wrapper {
+  width: min(100%, 480px);
+
+  margin: 48px auto 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================
+   BOX MAROON
+========================= */
+
+.gift-address {
+  position: relative;
+
+  padding: 25px 20px;
+
+  margin: 0;
+
+  box-sizing: border-box;
+
+  background: #741f35;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 28px
+    rgba(116, 31, 53, 0.18);
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   ORNAMEN TIPIS
+========================= */
+
+.gift-address::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 7px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.22);
+
+  border-radius: 13px;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.address-icon {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  margin: 0 auto 11px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.7);
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 15px;
+}
+
+
+/* =========================
+   JUDUL ALAMAT
+   POPPINS
+========================= */
+
+.gift-address h3 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0 0 10px;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  font-style: normal;
+
+  line-height: 1.25;
+
+  color: #fff;
+
+  text-transform: none;
+}
+
+
+/* =========================
+   ALAMAT
+   POPPINS
+========================= */
+
+.gift-address p {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 410px;
+
+  margin: 0 auto;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* =========================
+   CLOSING
+   POPPINS
+========================= */
+
+.gift-closing {
+  width: min(100%, 460px);
+
+  margin: 30px auto 0;
+
+  padding-top: 25px;
+
+  border-top:
+    1px solid
+    rgba(116, 31, 53, 0.15);
+}
+
+
+.gift-closing p {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  font-style: italic;
+
+  line-height: 1.7;
+
+  color: #6f5960;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .wedding-gift {
+    padding: 58px 18px 68px;
+  }
+
+
+  /* Flower */
+
+  .gift-flower {
+    width: 100px;
+
+    margin-bottom: 13px;
+  }
+
+
+  /* Header */
+
+  .gift-header {
+    margin-bottom: 31px;
+  }
+
+
+  /* Wedding Gift
+     ALLURA
+  */
+
+  .gift-header h2 {
+    margin-bottom: 15px;
+
+    font-family: "Allura", cursive !important;
+
+    font-size: 52px;
+
+    font-weight: 400 !important;
+
+    font-style: normal !important;
+  }
+
+
+  /* Description
+     POPPINS
+  */
+
+  .gift-header p {
+    padding: 0 5px;
+
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    font-style: normal;
+
+    line-height: 1.6;
+  }
+
+
+  /* =========================
+     CARD
+  ========================= */
+
+  .gift-card {
+    padding: 25px 20px 23px;
+
+    border-radius: 16px;
+  }
+
+
+  /* Logo */
+
+  .bank-logo-wrapper {
+    height: 55px;
+  }
+
+
+  .bank-logo-bri {
+    width: 115px;
+
+    max-height: 54px;
+  }
+
+
+  .bank-logo-bca {
+    width: 85px;
+
+    max-height: 46px;
+  }
+
+
+  /* Owner */
+
+  .rekening-owner {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 13px;
+  }
+
+
+  /* Number */
+
+  .rekening-number {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 17px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 17px;
+  }
+
+
+  /* Button */
+
+  .copy-button {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 10px;
+  }
+
+
+  /* =========================
+     ADDRESS
+  ========================= */
+
+  .gift-address-wrapper {
+    margin-top: 35px;
+
+    gap: 16px;
+  }
+
+
+  .gift-address {
+    padding: 23px 17px;
+
+    border-radius: 16px;
+  }
+
+
+  .gift-address::before {
+    inset: 6px;
+
+    border-radius: 11px;
+  }
+
+
+  .address-icon {
+    width: 30px;
+    height: 30px;
+
+    font-size: 14px;
+  }
+
+
+  .gift-address h3 {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 17px;
+
+    font-weight: 600;
+  }
+
+
+  .gift-address p {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+
+  /* =========================
+     CLOSING
+  ========================= */
+
+  .gift-closing {
+    margin-top: 25px;
+
+    padding-top: 22px;
+  }
+
+
+  .gift-closing p {
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 768px) {
+
+  .wedding-gift {
+    width: 620px;
+
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gift-reveal,
+  .gift-reveal.show,
+  .gift-from-left,
+  .gift-from-left.show,
+  .gift-from-right,
+  .gift-from-right.show,
+  .gift-reveal-up,
+  .gift-reveal-up.show {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+
+  .copy-button {
+    transition: none;
+  }
+}
