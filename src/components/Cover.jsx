@@ -17,7 +17,7 @@ function Cover({ onOpen }) {
   const params = new URLSearchParams(window.location.search);
 
   const namaTamu =
-    params.get("to") || weddingData.guest;
+    params.get("to")?.trim() || weddingData.guest;
 
   // =========================
   // BUKA UNDANGAN
@@ -52,7 +52,6 @@ function Cover({ onOpen }) {
 
         <div className="cover-inner">
 
-
           {/* =========================
               BUNGA ATAS CARD
           ========================= */}
@@ -63,7 +62,6 @@ function Cover({ onOpen }) {
             alt=""
           />
 
-
           {/* =========================
               INISIAL
           ========================= */}
@@ -71,7 +69,6 @@ function Cover({ onOpen }) {
           <p className="initials">
             RA
           </p>
-
 
           {/* =========================
               NAMA PENGANTIN
@@ -93,7 +90,6 @@ function Cover({ onOpen }) {
 
           </h1>
 
-
           {/* =========================
               TEKS UNDANGAN
           ========================= */}
@@ -114,23 +110,23 @@ function Cover({ onOpen }) {
 
           </div>
 
-
           {/* =========================
               NAMA TAMU
           ========================= */}
 
           <div className="guest-box">
 
+            {/* TULISAN INI TETAP */}
             <p className="guest-label">
-              Kepada Yth.
+              Yth. Bapak/Ibu/Saudara/i
             </p>
 
+            {/* NAMA TAMU DARI LINK */}
             <h3 className="guest-name">
               {namaTamu}
             </h3>
 
           </div>
-
 
           {/* =========================
               BUTTON
